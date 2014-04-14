@@ -52,7 +52,7 @@ class RHD_Social_Icons extends WP_Widget {
 		
 		<ul class="social-widget">
 			<li class="facebook-icon"><a href="<?php echo $instance['facebook']; ?>" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/facebook-icon.png" alt="Facebook button"></a></li>
-			<li class="twitter-icon"><a href="//twitter.com/<?php echo $twitter_link; ?>" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/twitter-icon.png" alt="Twitter button"></a></li>
+			<li class="twitter-icon"><a href="<?php echo $twitter_link; ?>" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/twitter-icon.png" alt="Twitter button"></a></li>
 			<li class="pinterest-icon"><a href="//pinterest.com/<?php echo $instance['pinterest']; ?>" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/pinterest-icon.png" alt="Pinterest button"></a></li>
 			<li class="instagram-icon"><a href="//instagram.com/<?php echo $instance['instagram']; ?>/" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/instagram-icon.png" alt="Instagram button"></a></li>
 			<li class="rss-icon"><a href="<?php echo $rss_link; ?>" target="_blank"><img src="<?php echo THEME_DIR; ?>/img/rss-icon.png" alt="rss button"></a></li>	
