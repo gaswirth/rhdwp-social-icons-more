@@ -82,7 +82,7 @@ class RHD_Social_Icons extends WP_Widget {
 	
 			<h3>Sidebar link Handles:</h3>
 					
-			<p><label for="<?php echo $this->get_field_id('facebook'); ?>">Facebook URL: </label><input id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" placeholder="http://facebook.com/your-page-here" value="<?php echo $args['facebook']; ?>" ></p>
+			<p><label for="<?php echo $this->get_field_id('facebook'); ?>">Facebook URL: </label><input id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" placeholder="http://facebook.com/your-page" value="<?php echo $args['facebook']; ?>" ></p>
 			
 			<p><label for="<?php echo $this->get_field_id('twitter'); ?>">Twitter handle: </label><input id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" placeholder="@my-twitter-handle" value="<?php echo $args['twitter']; ?>" ></p>
 			
