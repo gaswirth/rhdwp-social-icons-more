@@ -73,7 +73,7 @@ class RHD_Social_Icons extends WP_Widget {
 		$args['bloglovin'] = esc_attr($instance['bloglovin']);
 ?>
 
-		<?php wp_enqueue_style('rhd-social-icons', plugin_dir_url(__FILE__) . '/rhd-social-icons.css'); ?>
+		<?php wp_enqueue_style('rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css'); ?>
 
 		<div class="rhd-social-icons-entries">
 			<p><label for="<?php echo $this->get_field_id('title'); ?>">Widget Title (optional): </label><input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $args['title']; ?>" ></p>
