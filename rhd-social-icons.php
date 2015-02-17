@@ -74,11 +74,13 @@ class RHD_Social_Icons extends WP_Widget {
 		$args['email'] = esc_attr( $instance['email'] );
 
 		$args['widget_style'] = esc_attr( $instance['widget_style'] );
+		$args['icon_color'] = esc_attr( $instance['icon_color'] );
 ?>
 
 		<?php wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
 
 		<h3><?php _e( 'Widget Options:' ); ?></h3>
+		<p><?php _e( 'Layout:' ); ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Widget Title (optional): </label>
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $args['title']; ?>" >
@@ -91,6 +93,18 @@ class RHD_Social_Icons extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'style_vertical' ); ?>">
 				<?php _e( 'Sticky Vertical:'); ?>
 				<input id="<?php echo $this->get_field_id( 'style_vertical' ); ?>" name="<?php echo $this->get_field_name( 'widget_style' ); ?>" type="radio" value="style_vertical" <?php if( $args['widget_style'] === 'style_vertical' ){ echo 'checked="checked"'; } ?> />
+			</label>
+		</p>
+
+		<p><?php _e( 'Color Scheme:' ); ?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'style_black' ); ?>">
+				<?php _e( 'Black:' ); ?>
+				<input id="<?php echo $this->get_field_id( 'style_black' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="radio" value="style_black" <?php if( $args['icon_color'] === 'style_black' ){ echo 'checked="checked"'; } ?> />
+			</label>
+			<label for="<?php echo $this->get_field_id( 'style_white' ); ?>">
+				<?php _e( 'White:'); ?>
+				<input id="<?php echo $this->get_field_id( 'style_white' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="radio" value="style_white" <?php if( $args['icon_color'] === 'style_white' ){ echo 'checked="checked"'; } ?> />
 			</label>
 		</p>
 
