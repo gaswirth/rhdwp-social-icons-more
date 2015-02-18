@@ -28,8 +28,6 @@ class RHD_Social_Icons extends WP_Widget {
 
 		extract( $args );
 
-		echo $before_widget;
-
 		$title = apply_filters( 'widget_title', $instance['title']);
 
 		if ( $instance['rss'] == '' )
@@ -46,16 +44,18 @@ class RHD_Social_Icons extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title; ?>
 
+		echo $before_widget;
+
 		<?php wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
 
 		<ul class="social-widget">
-			<li class="instagram-icon"><a href="//instagram.com/<?php echo $instance['instagram']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/instagram-icon.png" alt="Instagram social-button"></a></li>
-			<li class="pinterest-icon"><a href="//pinterest.com/<?php echo $instance['pinterest']; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/pinterest-icon.png" alt="Pinterest social-button"></a></li>
-			<li class="twitter-icon"><a href="<?php echo $twitter_link; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/twitter-icon.png" alt="Twitter social-button"></a></li>
-			<li class="facebook-icon"><a href="<?php echo $instance['facebook']; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/facebook-icon.png" alt="Facebook social-button"></a></li>
-			<li class="bloglovin-icon"><a href="<?php echo $instance['bloglovin']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/bloglovin-icon.png" alt="bloglovin social-button"></a></li>
-			<li class="rss-icon"><a href="<?php echo $rss_link; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/rss-icon.png" alt="rss social-button"></a></li>
-			<li class="email-icon"><a href="<?php echo $instance['email']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/email-icon.png" alt="email social-button"></a></li>
+			<li class="instagram-icon"><a href="//instagram.com/<?php echo $instance['instagram']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/instagram-black.png" alt="Instagram social-button"></a></li>
+			<li class="pinterest-icon"><a href="//pinterest.com/<?php echo $instance['pinterest']; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/pinterest-black.png" alt="Pinterest social-button"></a></li>
+			<li class="twitter-icon"><a href="<?php echo $twitter_link; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/twitter-black.png" alt="Twitter social-button"></a></li>
+			<li class="facebook-icon"><a href="<?php echo $instance['facebook']; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/facebook-black.png" alt="Facebook social-button"></a></li>
+			<li class="bloglovin-icon"><a href="<?php echo $instance['bloglovin']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/bloglovin-black.png" alt="bloglovin social-button"></a></li>
+			<li class="rss-icon"><a href="<?php echo $rss_link; ?>" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/rss-black.png" alt="rss social-button"></a></li>
+			<li class="email-icon"><a href="<?php echo $instance['email']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/email-black.png" alt="email social-button"></a></li>
 		</ul>
 
 <?php	echo $after_widget;
@@ -74,37 +74,23 @@ class RHD_Social_Icons extends WP_Widget {
 		$args['email'] = esc_attr( $instance['email'] );
 
 		$args['widget_style'] = esc_attr( $instance['widget_style'] );
-		$args['icon_color'] = esc_attr( $instance['icon_color'] );
 ?>
 
 		<?php wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
 
 		<h3><?php _e( 'Widget Options:' ); ?></h3>
-		<p><?php _e( 'Layout:' ); ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Widget Title (optional): </label>
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $args['title']; ?>" >
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'style_horizontal' ); ?>">
-				<?php _e( 'Horizontal (Default):' ); ?>
+				<?php _e( 'Horizontal (Default, black icons on white):' ); ?>
 				<input id="<?php echo $this->get_field_id( 'style_horizontal' ); ?>" name="<?php echo $this->get_field_name( 'widget_style' ); ?>" type="radio" value="style_horizontal" <?php if( $args['widget_style'] === 'style_horizontal' ){ echo 'checked="checked"'; } ?> />
 			</label>
 			<label for="<?php echo $this->get_field_id( 'style_vertical' ); ?>">
-				<?php _e( 'Sticky Vertical:'); ?>
+				<?php _e( 'Sticky Vertical (white icons on black):'); ?>
 				<input id="<?php echo $this->get_field_id( 'style_vertical' ); ?>" name="<?php echo $this->get_field_name( 'widget_style' ); ?>" type="radio" value="style_vertical" <?php if( $args['widget_style'] === 'style_vertical' ){ echo 'checked="checked"'; } ?> />
-			</label>
-		</p>
-
-		<p><?php _e( 'Color Scheme:' ); ?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'style_black' ); ?>">
-				<?php _e( 'Black:' ); ?>
-				<input id="<?php echo $this->get_field_id( 'style_black' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="radio" value="style_black" <?php if( $args['icon_color'] === 'style_black' ){ echo 'checked="checked"'; } ?> />
-			</label>
-			<label for="<?php echo $this->get_field_id( 'style_white' ); ?>">
-				<?php _e( 'White:'); ?>
-				<input id="<?php echo $this->get_field_id( 'style_white' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="radio" value="style_white" <?php if( $args['icon_color'] === 'style_white' ){ echo 'checked="checked"'; } ?> />
 			</label>
 		</p>
 
@@ -149,4 +135,3 @@ function register_rhd_social_icons_widget() {
     register_widget( 'RHD_Social_Icons' );
 }
 add_action( 'widgets_init', 'register_rhd_social_icons_widget' );
-?>
