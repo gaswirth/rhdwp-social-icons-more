@@ -42,11 +42,11 @@ class RHD_Social_Icons extends WP_Widget {
 			$twitter_link = 'http://twitter.com/' . $instance['twitter'];
 
 		if ( $title )
-			echo $before_title . $title . $after_title; ?>
+			echo $before_title . $title . $after_title;
 
 		echo $before_widget;
 
-		<?php wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
+		wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
 
 		<ul class="social-widget">
 			<li class="instagram-icon"><a href="//instagram.com/<?php echo $instance['instagram']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/instagram-black.png" alt="Instagram social-button"></a></li>
