@@ -46,7 +46,7 @@ class RHD_Social_Icons extends WP_Widget {
 
 		echo $before_widget;
 
-		wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . '/rhd-social-icons.css' ); ?>
+		wp_enqueue_style( 'rhd-social-icons', RHD_SI_DIR . 'rhd-social-icons.css' ); ?>
 
 		<ul class="social-widget">
 			<li class="instagram-icon"><a href="//instagram.com/<?php echo $instance['instagram']; ?>/" target="_blank"><img src="<?php echo RHD_SI_DIR; ?>/img/instagram-black.png" alt="Instagram social-button"></a></li>
