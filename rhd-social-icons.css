@@ -24,6 +24,7 @@
 	right: 0;
 	background: black;
 	padding: 0.5em 0 0.25em 0;
+	z-index: 999;
 }
 
 .rhd_social-vertical li {
